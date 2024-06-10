@@ -33,5 +33,24 @@ public class BookReview {
         // https://gutenberg.org/cache/epub/98/pg98.txt is a link
         // to the text of "Tale of Two Cities" from Project Gutenberg
         String book = "https://gutenberg.org/cache/epub/98/pg98.txt";
+        //Print out number of unique words
+        System.out.println("A Tale of Two Cities has " + countUnique(connectToBook(book)) + " unique words.");
     } // method main
+
+    /**
+     * Loops through the scanner of the book's txt as long as there is a next word
+     * if that word was successfully added via the DyanmicArray's addUnique function
+     * the counter will go up.
+     * @param scanner Scanner of the book's txt returned from connectToBook function
+     * @return int count of the number of unique words from the given scanner
+     */
+    public static int countUnique(Scanner scanner) {
+        int count = 0;//int counter for unique words
+        DynamicArray unique = new DynamicArray();//use Dynamic array with built in addUnique function
+        while(scanner.hasNext()){//while txt has next word, keep loop going
+            if(unique.addUnique(scanner.next()))//addUnique was a boolean that returns true when it functions, so we can use this to count the number of unique words added to the array
+                count++;
+        }
+        return count;
+    }//method countUnique
 } // class BookReview
