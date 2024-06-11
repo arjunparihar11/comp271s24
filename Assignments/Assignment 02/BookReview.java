@@ -34,7 +34,8 @@ public class BookReview {
         // to the text of "Tale of Two Cities" from Project Gutenberg
         String book = "https://gutenberg.org/cache/epub/98/pg98.txt";
         //Print out number of unique words
-        System.out.println("A Tale of Two Cities has " + countUnique(connectToBook(book)) + " unique words.");
+        //System.out.println("A Tale of Two Cities has " + countUnique(connectToBook(book)) + " unique words.");
+        System.out.printf("%nA Tale of Two Cities has %d unique words.%n", countUnique(connectToBook(book)));
     } // method main
 
     /**
