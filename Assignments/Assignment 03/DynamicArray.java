@@ -97,6 +97,50 @@ public class DynamicArray implements BasicTools {
         }
         return canBeAdded;
     } // method addUnique
-
     
+    /**
+     * Accessor for field position
+     * @return int current value of position which essentially
+     * reports the number of items stored in the dynamci array.
+     */
+    public int getPosition(){
+        return this.position;
+    }// method getPosition
+
+    /**
+     * Accessor for element of data 
+     * @param index int value for index of returning element
+     * @return String value of element in data array at index of int index
+     * reports the number of items stored in the dynamci array.
+     */
+    public String getData(int index){
+        return this.data[index];
+    }// method getData
+
+    /**
+     * Function iterates through smaller array between this and other to search for a common
+     * String element between the arrays
+     * @param other is the other array we are checking against this array
+     * @return true if there is a common String element, false otherwise
+     */
+    public boolean intersects(DynamicArray other){
+        boolean intersect = false;//boolean to return if arrays have common string
+        int index = 0;//int to iterate through array indexes
+        if(other.getPosition() > this.getPosition()){//if this array is smaller iterate through this array
+            while(index < this.getPosition() && !intersect){//iterate through this array
+                if(other.contains(this.getData(index))){//if other contains element of this
+                    intersect = true;//there is an intersection, break from while loop
+                }
+                index++;//next element
+            }
+        } else {//otherwise iterate through other array if it is smaller
+            while(index < other.getPosition() && !intersect){//iterate through other array
+                if(this.contains(other.getData(index))){//if this contains element of other
+                    intersect = true;//there is an intersection, break from while loop
+                }
+                index++;//next element
+            }
+        }
+        return intersect;//return false if none were found, returns true otherwise
+    }
 } // class DynamicArray

@@ -40,7 +40,7 @@ public class SimpleTesting {
 
         boolean dwarfDwarf = dwarfNames.intersects(dwarfNames); // Expect true 
 
-        boolean result = elfDwarf && dwarfElf && !elfKlingon && !klingonElf && dwarfElf;
+        boolean result = dwarfDwarf && elfDwarf && dwarfElf && !elfKlingon && !klingonElf && dwarfElf;
         String resultString = (result) ? PASS : FAIL;
 
         String report = String.format("\n\nYou %s the test\n\n", resultString);
