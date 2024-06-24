@@ -1,8 +1,15 @@
+import Station;
+
+package Assignments.Assignment_04;
 public class TrainLine {
     
+    private String lineColor;
     private Station head;
     private Station tail;
 
+    public TrainLine(String color){
+        lineColor = color;
+    }
     /**
      * Add a new station at the end of this trainline. The method creates
      * a new station object, first, with the given name. Then it checks to
@@ -31,4 +38,32 @@ public class TrainLine {
             this.tail = newStation; //Designate newly added station as tail station
         }
     } // method addStation
+
+    public boolean contains(String station){
+        boolean contained=false;
+        Station currentStation = this.head;
+        if(this.tail.equals(station)){
+            contained = true;
+        }
+        while (!contained && currentStation.hasNext()) {
+            if(currentStation.equals(station)){
+                contained = true;
+            }
+            currentStation = currentStation.getNext();
+        }
+        return contained;
+    }//method contains
+
+    public String toString(){
+        String stations = this.lineColor;
+        Station currentStation = this.head;
+        while (currentStation.hasNext()) {
+            stations += "\n";
+            stations += currentStation.toString();
+            currentStation = currentStation.getNext();
+        }
+        stations += "\n";
+        stations += this.tail.toString();
+        return stations;
+    }
 }

@@ -1,6 +1,6 @@
-public class TrainLine {
+public class TrainLine_5 {
     
-    private Station head;
+    private Station_5 head;
 
     /**
      * Add a new station at the end of this trainline. The method creates
@@ -16,7 +16,7 @@ public class TrainLine {
      */
     public void addStation(String name) {
         // Create a new station object with the given name
-        Station newStation = new Station(name);
+        Station_5 newStation = new Station_5(name);
         // Check if this trainline has a head station yet or not
         if (this.head == null) {
             // There is no head station in this trainline. Make the 
@@ -27,7 +27,7 @@ public class TrainLine {
             // one station at a time, to find its last station. The station we
             // visit, in each step, is called the current station. We begin
             // with this trainline's head station.
-            Station currentStation = this.head;
+            Station_5 currentStation = this.head;
             // The while-loop below hops from station to station, until
             // it finds a station that points to null. That's the last
             // station of the line.

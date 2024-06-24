@@ -1,3 +1,6 @@
+import Station;
+
+package Assignments.Assignment_04;
 /**
  * Object that simulates a simple train station. These objects are used by
  * class TrainLine to simulate a train route.
@@ -47,4 +50,15 @@ public class Station {
         return this.next;
     } // method getNext()
     
+    public String toString(){
+        return this.name;
+    }
+
+    public boolean equals(String other){
+        boolean equals = false;
+        if(other.equals(this.toString())){
+            equals = true;
+        }
+        return equals;
+    }
 } // class Station

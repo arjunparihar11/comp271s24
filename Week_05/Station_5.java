@@ -2,19 +2,19 @@
  * Object that simulates a simple train station. These objects are used by
  * class TrainLine to simulate a train route.
  */
-public class Station {
+public class Station_5 {
 
     /** The name of the train station */
     private String name; 
     /** The station immediately after */
-    private Station next;
+    private Station_5 next;
 
     /**
      * A simple constructor to instantiate a Station object with a given name
      * but unknown (null) next station.
      * @param name
      */
-    public Station(String name) {
+    public Station_5(String name) {
         this.name = name;
         this.next = null;
     } // simple constructor
@@ -24,7 +24,7 @@ public class Station {
      * 
      * @param next
      */
-    public void setNext(Station next) {
+    public void setNext(Station_5 next) {
         this.next = next;
     } // method setNext
 
@@ -43,7 +43,7 @@ public class Station {
      * 
      * @return Station object after this object. May return a null.
      */
-    public Station getNext() {
+    public Station_5 getNext() {
         return this.next;
     } // method getNext()
     
