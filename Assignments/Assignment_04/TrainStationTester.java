@@ -1,5 +1,4 @@
 package Assignments.Assignment_04;
-import TrainLine;
 
 public class TrainStationTester{
 	public static void main(String[] args) {
@@ -27,15 +26,15 @@ public class TrainStationTester{
         purpleLine.addStation("Wilson");
 
         System.out.println(redLine);
-        System.out.println("\n");
+        System.out.println();
         System.out.println(purpleLine);
-        System.out.println("\n");
+        System.out.println();
+        System.out.printf("Red Line has %d Stations%n", redLine.length());
+        System.out.printf("Purple Line has %d Stations%n", purpleLine.length());
         System.out.println(redLine.contains("Howard"));
         System.out.println(purpleLine.contains("Howard"));
-        System.out.println("\n");
         System.out.println(redLine.contains("Wilson"));
         System.out.println(purpleLine.contains("Wilson"));
-        System.out.println("\n");
         System.out.println(redLine.contains("Noyes"));
         System.out.println(purpleLine.contains("Noyes"));
     }
