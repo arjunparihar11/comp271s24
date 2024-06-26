@@ -69,13 +69,9 @@ public class TrainLine {
      * @return true if station found; false otherwise or if object has no stations.
      */
     public boolean contains(String stationName) {
-        boolean found = false;
-        Station current = this.head;
-        while (!found && current != null) {
-            found = current.getName().equals(stationName);
-            current = current.getNext();
-        }
-        return found;
+        //revised contains to use indexOf, if index of is -1 return false
+        //otherwise return true
+        return indexOf(stationName) != -1;
     } // method contains
 
     /**
@@ -146,23 +142,20 @@ public class TrainLine {
     public int indexOf(String name) {
         //begin with -1, that is what will be returned if there is no station
         int index = -1;
-        //only search if station is contained in TrainLine
-        if(this.contains(name)){
-            //boolean to break while loop once station is found
-            boolean indexFound = false;
-            //index station to iterate through TrainLine
-            Station indexStation = this.head;
-            //While there is a station and we have not found the given station loop
-            while(indexStation !=null && !indexFound){
-                //since we start with -1, index++ to begin so we start at 0
-                index++;
-                //if this station is the one we are looking for break loop
-                if(indexStation.getName().equals(name)){
-                    indexFound = true;
-                }
-                //otherwise iterate to next station
-                indexStation = indexStation.getNext();
+        //boolean to break while loop once station is found
+        boolean indexFound = false;
+        //index station to iterate through TrainLine
+        Station indexStation = this.head;
+        //While there is a station and we have not found the given station loop
+        while(indexStation !=null && !indexFound){
+            //since we start with -1, index++ to begin so we start at 0
+            index++;
+            //if this station is the one we are looking for break loop
+            if(indexStation.getName().equals(name)){
+                indexFound = true;
             }
+            //otherwise iterate to next station
+            indexStation = indexStation.getNext();
         }
         //return index will be -1 if none was found or the index given from array
         return index;
