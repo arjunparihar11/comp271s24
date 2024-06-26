@@ -21,6 +21,6 @@ public class SimpleTesting {
         System.out.printf("\n\nSequence test: %s", (sequence ? PASS : FAIL));
         // Test non existent
         boolean nonExisting = (redLineSB.indexOf(NON_EXISTENT) == -1);
-        System.out.printf("\n\nSequence test: %s", (nonExisting ? PASS : FAIL));
+        System.out.printf("\n\nSequence test: %s%n", (nonExisting ? PASS : FAIL));
     }
 }

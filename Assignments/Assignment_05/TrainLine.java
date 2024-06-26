@@ -72,7 +72,7 @@ public class TrainLine {
         boolean found = false;
         Station current = this.head;
         while (!found && current != null) {
-            found = current.getName().equals(name);
+            found = current.getName().equals(stationName);
             current = current.getNext();
         }
         return found;
@@ -140,6 +140,18 @@ public class TrainLine {
 
     /** STUB FOR indexOf */
     public int indexOf(String name) {
-        return -1;
+        int index = -1;
+        if(this.contains(name)){
+            boolean indexFound = false;
+            Station indexStation = this.head;
+            while(indexStation !=null && !indexFound){
+                index++;
+                if(indexStation.getName().equals(name)){
+                    indexFound = true;
+                }
+                indexStation = indexStation.getNext();
+            }
+        }
+        return index;
     } // method indexOf
 }

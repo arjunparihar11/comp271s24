@@ -1,19 +1,19 @@
-public class TrainLine {
+public class TrainLine_6 {
 
     /** Points to first station in the train line */
-    private Station head;
+    private Station_6 head;
 
     /**
      * Points to the last station and facilitates O(1) performance when adding
      * a new station at the end of the line
      */
-    private Station tail;
+    private Station_6 tail;
 
     /** Current number of stations in this object */
     private int numberOfStations;
 
     /** Default constructor - redundant but good to show intent */
-    public TrainLine() {
+    public TrainLine_6() {
         this.head = null;
         this.tail = null;
         this.numberOfStations = 0;
@@ -33,7 +33,7 @@ public class TrainLine {
      */
     public void addStation(String name) {
         // Create a new station object with the given name
-        Station newStation = new Station(name);
+        Station_6 newStation = new Station_6(name);
         // Check if this trainline has a head station yet or not
         if (this.head == null) {
             // There is no head station in this trainline. Make the
@@ -79,7 +79,7 @@ public class TrainLine {
                 && existingStationName != null && existingStationName.length() > 0
                 && stationToAdd != null && stationToAdd.length() > 0) {
             // Traverse the TrainLine, looking for the existing station
-            Station current = this.head;
+            Station_6 current = this.head;
             while (current != null) {
                 // Check if the current station is the one we are looking for.
                 // If the intended station is not found, we skill the if block,
@@ -88,7 +88,7 @@ public class TrainLine {
                 if (current.getName().equals(existingStationName)) {
                     // Intended station found, time to get things going, first
                     // by creating the new station to insert.
-                    Station newStation = new Station(stationToAdd);
+                    Station_6 newStation = new Station_6(stationToAdd);
                     // Make the new station point to where the existing station points
                     newStation.setNext(current.getNext());
                     // Make the existing station point to the new station
