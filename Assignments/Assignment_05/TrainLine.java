@@ -130,7 +130,7 @@ public class TrainLine {
             Station current = this.head;
             while (current.hasNext()) {
                 sb.append(String.format("[ %s ] --> ", current.getName()));
-                current = current.getNext()
+                current = current.getNext();
             }
             // Treat the last station in the line
             sb.append(String.format("[ %s ]", tail.getName()));
