@@ -96,4 +96,26 @@ public class TrainLine {
     public int length(){
         return this.numOfStations;
     }
+
+    public boolean addAfter(String existingStation, String stationToAdd){
+        boolean success = false;
+        //Everything else goes here:
+        if(!this.contains(stationToAdd)){
+            //Now that we know station to add is not present, create a new station
+            Station newStation = new Station(stationToAdd);
+            //Traverse this line to existing station
+            //station may not actually exist
+            boolean existingPresent = false;
+            Station current = this.head;
+            while(!existingPresent && current != null){
+                existingPresent = current.equals(existingStation);
+                current = current.getNext();
+            }
+            //if existingPresent is false -- then we cannot add
+            //Record where existing station points to null or other station
+            //Make existing station next new station
+            //Make new station next to where existing station was pointing to
+        }        
+        return success;
+    }
 }
