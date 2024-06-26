@@ -148,7 +148,6 @@ public class TrainLine {
         Station indexStation = this.head;
         //While there is a station and we have not found the given station loop
         while(indexStation !=null && !indexFound){
-            //since we start with -1, index++ to begin so we start at 0
             index++;
             //if this station is the one we are looking for break loop
             if(indexStation.getName().equals(name)){
@@ -157,7 +156,33 @@ public class TrainLine {
             //otherwise iterate to next station
             indexStation = indexStation.getNext();
         }
+        if(!indexFound){
+            index = -1;
+        }
         //return index will be -1 if none was found or the index given from array
         return index;
     } // method indexOf
+
+    /*
+     * Accessor to return head of TrainLine
+     */
+    public Station getHead(){
+        return this.head;
+    }
+    /*
+     * Appends given TrainLine to the end of this TrainLine
+     * @param other TrainLine being added to this TrainLine
+     */
+    public void append(TrainLine other) {
+        //index for other TrainLine
+        Station indexStation = other.getHead();
+        //While there is a station in other TrainLine
+        while(indexStation != null){
+            //add that staion to the end of this one
+            this.addStation(indexStation.getName());
+            //iterate to next station
+            indexStation = indexStation.getNext();
+        }
+    }//method append
+
 }
