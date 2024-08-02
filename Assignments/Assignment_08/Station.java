@@ -3,7 +3,6 @@
  * class TrainLine to simulate a train route.
  */
 public class Station {
-
     /** The name of the train station */
     private String name;
     /** The station immediately after */
