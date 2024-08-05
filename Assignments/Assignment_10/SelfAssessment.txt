@@ -1,0 +1,13 @@
+Based on my performance throughout the course, I believe I demonstrated decent participation,
+quality assignments, and responsiveness to feedback on my assignments. I attended every class on 
+time and engaged with the material, when prompted by the professor I was able to answer questions.
+My assignments were all submitted on time and compiled correctly. I feel like I had a strong
+understanding of the material and am confident about what I learned throughout the course. As shown
+in my reviews where I graded myself with 8 greens, 9 yellows, and no reds. I rarely if at all
+repeated mistakes, most often my yellows were just a consequence of inefficient code, not a 
+misunderstanding of the material or a repeated mistake. Although I occasionally faced challenges
+with Codespaces, such as issues stemming from multiple instances of TrainLine.java and Station.java
+conflicting with each other at times I mitigated these problems by utilizing outside IDEs to ensure
+accurate testing and cleaned up inside Codespaces when I knew what the issue was. 
+
+Based on the above, I propose a course grade of A.
