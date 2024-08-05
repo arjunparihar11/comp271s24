@@ -80,7 +80,6 @@ public class HashTable271<K, V> {
      *              cases object V may contain object K. For example, a Person may
      *              have a SSN which is used as an Integer boxed type for hashing.
      */
-    @SuppressWarnings({ "unchecked" })
     public void put(K key, V value) {
         // Combine the key and value objects into a linkable node
         KVNode<K, V> newNode = new KVNode<K, V>(key, value);
